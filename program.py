@@ -41,9 +41,14 @@ def remove_if_exist(filename):
             raise
 
 
-capture_images()
-aligned = facenet.align_face(images)
-comparisons = facenet.compare(aligned)
+def main():
+    capture_images()
+    aligned = facenet.align_face(images)
+    comparisons = facenet.compare(aligned)
 
-print("Is image 1 and 2 similar? ", bool(comparisons[0][1]))
-print("Is image 1 and 3 similar? ", bool(comparisons[0][2]))
+    print("Is image 1 and 2 similar? ", bool(comparisons[0][1]))
+    print("Is image 1 and 3 similar? ", bool(comparisons[0][2]))
+
+
+if __name__ == "__main__":
+    main()
